@@ -1,112 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PrimeLoop Studio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PrimeLoop Studio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Inter, Helvetica, Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Inter, Helvetica, Arial, sans-serif;
+}
 
-    body {
-      background: #007DFF;
-      color: #FFFFFF;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #007DFF, #005FCC);
+  color: #ffffff;
+  padding: 20px;
+}
 
-    .container {
-      max-width: 720px;
-      padding: 40px 24px;
-      text-align: left;
-    }
+/* Glass Card */
+.glass {
+  width: 100%;
+  max-width: 750px;
+  padding: 60px 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
 
-    .logo {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 24px;
-    }
+/* Logo */
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
 
-    .logo span {
-      color: #519EFF;
-    }
+.logo span {
+  color: #519EFF;
+}
 
-    h1 {
-      font-size: 42px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
+/* Heading */
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 32px;
-      max-width: 600px;
-    }
+/* Paragraph */
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 35px;
+}
 
-    .cta {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 8px;
-      background: #FFFFFF;
-      color: #007DFF;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
+/* CTA Button */
+.cta {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #007DFF;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-    .cta:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-    footer {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-    }
-  </style>
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Mobile Optimization */
+@media(max-width: 600px) {
+  .glass {
+    padding: 40px 25px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="logo">
-      Prime<span>Loop</span> Studio
-    </div>
 
-    <h1>
-      Retention-focused video edits<br />
-      for creators & brands
-    </h1>
-
-    <p>
-      We help creators and companies turn raw footage into
-      high-performing short-form and long-form content.
-    </p>
-
-    <a href="mailto:primeloopstudio@gmail.com" class="cta">
-      Get a free sample
-    </a>
+<div class="glass">
+  <div class="logo">
+    Prime<span>Loop</span> Studio
   </div>
+
+  <h1>
+    Premium retention-focused edits<br>
+    for creators & brands
+  </h1>
+
+  <p>
+    We transform raw footage into high-performing short-form
+    and long-form content designed to increase engagement,
+    watch-time and audience growth.
+  </p>
+
+  <a href="mailto:primeloopstudio@gmail.com" class="cta">
+    Book a Free Sample
+  </a>
 
   <footer>
     © 2026 PrimeLoop Studio
   </footer>
+</div>
+
 </body>
 </html>
