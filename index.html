@@ -4,37 +4,277 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeLoop Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@500&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    /* RESET */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
+    body { background:#FFFFFF; color:#000; scroll-behavior:smooth; }
+    a { text-decoration:none; color:inherit; }
+
+    /* NAVBAR */
+    nav { position: fixed; width:100%; top:0; left:0; display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background:#FFFFFF; z-index:1000; }
+    nav .logo { font-family:'Inter'; font-weight:500; border-left:2px solid #555555; border-right:2px solid #555555; padding:0 6px; }
+    nav .hamburger { width:35px; height:35px; background:#F5F7FA; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:6px; position:relative; z-index:1100; }
+    nav .hamburger div { width:22px; height:2px; background:#000; transition:0.3s; position:relative; }
+    nav .hamburger div::before, nav .hamburger div::after { content:''; width:22px; height:2px; background:#000; position:absolute; left:0; transition:0.3s; }
+    nav .hamburger div::before { top:-7px; }
+    nav .hamburger div::after { top:7px; }
+    nav .hamburger.active div { background:transparent; }
+    nav .hamburger.active div::before { transform:rotate(45deg); top:0; }
+    nav .hamburger.active div::after { transform:rotate(-45deg); top:0; }
+
+    /* HAMBURGER MENU PANEL */
+    #menu-panel { position:fixed; top:0; left:0; width:100%; height:80%; max-height:600px; background:#fff; display:none; flex-direction:column; align-items:center; justify-content:center; z-index:1050; opacity:0; transition:0.3s; }
+    #menu-panel.active { display:flex; opacity:1; }
+    #menu-panel a { margin:15px 0; font-size:18px; font-weight:600; }
+
+    /* HERO */
+    .hero { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; min-height:90vh; padding:0 40px; background:#FFFFFF; }
+    .hero .subtitle { color:#777777; font-size:18px; margin-bottom:10px; font-family:'Baloo 2'; font-weight:600; }
+    .hero .title { font-family:'Baloo 2'; font-weight:800; font-size:48px; line-height:1.2; color:#000; margin-bottom:20px; }
+    .hero .cta { padding:14px 28px; background:#519EFF; color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:18px; margin-bottom:20px; }
+    .hero .animation { margin-top:20px; height:5px; width:50px; background:#519EFF; border-radius:2px; }
+
+    /* SERVICES */
+    .services { padding:80px 40px; background:#F5F7FA; display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; }
+    .service-card { background:#FFFFFF; border-radius:12px; padding:20px; flex:1; min-width:250px; box-sizing:border-box; }
+    .service-card h3 { font-family:'Baloo 2'; font-weight:800; margin-bottom:15px; }
+    .service-card ul { list-style:none; padding-left:0; }
+    .service-card ul li::before { content:'•'; color:#519EFF; margin-right:8px; font-weight:bold; }
+
+    /* WHY US */
+    .why-us { padding:80px 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .why-box { position:relative; background:#F5F7FA; border-radius:12px; padding:50px 20px 20px 20px; display:flex; flex-direction:column; justify-content:center; min-height:180px; }
+    .why-box .icon { position:absolute; top:-20px; width:40px; height:40px; border-radius:50%; background:#519EFF; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; }
+    .why-box h4 { margin-bottom:10px; font-family:'Baloo 2'; font-weight:800; }
+    .why-box p { font-size:24px; font-weight:600; }
+
+    /* PRICING */
+    .pricing { padding:80px 40px; background:#FFFFFF; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+    .price-card { background:#F5F7FA; flex:1; min-width:250px; border-radius:12px; padding:20px; display:flex; flex-direction:column; align-items:flex-start; position:relative; }
+    .price-card.most-popular { background:#000; color:#fff; }
+    .price-card .price { font-size:36px; font-weight:800; text-align:center; margin:15px 0; color:#519EFF; }
+    .price-card .package { font-size:16px; color:#777; text-align:left; margin-bottom:15px; }
+    .price-card ul { list-style:none; padding-left:0; width:100%; }
+    .price-card ul li::before { content:'•'; color:#519EFF; margin-right:8px; font-weight:bold; }
+    .price-card button { margin-top:20px; align-self:center; padding:12px 24px; background:#519EFF; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; }
+
+    /* CONTACT */
+    .contact { padding:80px 40px; background:#F5F7FA; }
+    .contact form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:auto; }
+    .contact input, .contact textarea { padding:12px; border-radius:6px; border:1px solid #ccc; font-size:16px; }
+    .contact button { padding:12px; background:#519EFF; color:#fff; border:none; border-radius:6px; cursor:pointer; font-weight:600; }
+
+    /* FOOTER */
+    footer { padding:40px; background:#EAF6FF; display:flex; justify-content:center; flex-wrap:wrap; gap:15px; font-family:'Inter'; font-weight:500; }
+    footer a { cursor:pointer; }
+    @media(max-width:768px){
+      .hero .title { font-size:36px; }
+      .hero .subtitle { font-size:16px; }
+      .services { flex-direction:column; }
+      .pricing { flex-direction:column; }
+      footer { flex-direction:column; }
+      #menu-panel { height:100%; }
     }
+  </style>
+</head>
+<body>
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">Prime<span style="color:#519EFF;">Loop</span>Studio</div>
+    <div class="hamburger" id="hamburger"><div></div></div>
+  </nav>
 
-    body {
-      background: linear-gradient(135deg, #007DFF, #004ecb);
-      color: #ffffff;
-      padding: 40px 20px;
-    }
+  <!-- HAMBURGER PANEL -->
+  <div id="menu-panel">
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-    /* Container */
-    .section {
-      max-width: 1100px;      margin: 0 auto 120px auto;
-      animation: fadeUp 0.8s ease forwards;
-    }
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="subtitle">STOP PLANNING</div>
+    <div class="title">HIGH-RETENTION EDITS<br>FOR CREATORS & BRANDS</div>
+    <p class="subtitle">We turn raw footage into scroll-stopping content that keeps your audience watching.</p>
+    <button class="cta">Start Your Project</button>
+    <div class="animation"></div>
+  </section>
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }    }
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="service-card">
+      <h3>Youtube Automation Editing</h3>
+      <ul>
+        <li>Automated upload-ready videos</li>
+        <li>Thumbnail integration</li>
+        <li>SEO optimized titles & tags</li>
+        <li>Captions & subtitles</li>
+        <li>Basic color correction</li>
+        <li>2 revisions per video</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>Short-Form Content Editing</h3>
+      <ul>
+        <li>Instagram / YouTube shorts</li>
+        <li>Fast turnaround</li>
+        <li>Motion graphics & SFX</li>
+        <li>Text & captions</li>
+        <li>Color grading & audio fix</li>
+        <li>2 revisions per video</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>Long-Form YouTube Editing</h3>
+      <ul>
+        <li>Full-length video editing</li>
+        <li>Advanced color grading</li>
+        <li>Transitions & effects</li>
+        <li>Text & graphics overlays</li>
+        <li>Sound design & audio balancing</li>
+        <li>3 revisions per video</li>
+      </ul>
+    </div>
+  </section>
 
-    /* Glass Card */
-    .glass {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(18px);
+  <!-- WHY US -->
+  <section class="why-us">
+    <div class="why-box">
+      <div class="icon">✓</div>
+      <h4>Projects Completed</h4>
+      <p>40+</p>
+    </div>
+    <div class="why-box">
+      <div class="icon">😊</div>
+      <h4>Happy Clients</h4>
+      <p>30+</p>
+    </div>
+    <div class="why-box">
+      <div class="icon">⏱️</div>
+      <h4>Years Of Experience</h4>
+      <p>1.5+</p>
+    </div>
+    <div class="why-box">
+      <div class="icon">⭐</div>
+      <h4>Client Satisfaction</h4>
+      <p>96%</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="price-card">
+      <h3>Elite</h3>
+      <div class="package">The Foundation Package</div>
+      <div class="price">$149</div>
+      <ul>
+        <li>Short-form content (YouTube/Instagram)</li>
+        <li>Color correction & basic grading</li>
+        <li>Simple transitions & cuts</li>
+        <li>Text, captions and effects</li>
+        <li>2 revisions per video</li>
+        <li>Delivery within 24–36 hours</li>
+      </ul>
+      <button>Start Your Project</button>
+    </div>
+
+    <div class="price-card most-popular">
+      <h3>Infinity</h3>
+      <div class="package">The Growth Package</div>
+      <div class="price">$259</div>
+      <ul>
+        <li>Short + Long-form content</li>
+        <li>YouTube automation editing</li>
+        <li>Motion graphics & overlays & SFX</li>
+        <li>Advanced color grading & sound design</li>
+        <li>3 revisions per video</li>
+        <li>Delivery within 36–48 hours</li>
+      </ul>
+      <button>Start Your Project</button>
+    </div>
+
+    <div class="price-card">
+      <h3>Legendary</h3>
+      <div class="package">The Ultimate Package</div>
+      <div class="price">$369</div>
+      <ul>
+        <li>Full-service editing (Short + Long-form + Branding)</li>
+        <li>Motion graphics / animation</li>
+        <li>Viral hook strategy</li>
+        <li>Multi-channel formatting</li>
+        <li>6 revisions per video</li>
+        <li>Priority delivery (48–72 hours)</li>
+      </ul>
+      <button>Start Your Project</button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#hero">Home</a> | 
+    <a href="#services">Services</a> | 
+    <a href="#pricing">Pricing</a> | 
+    <a href="#contact">Contact</a> 
+    <div style="width:100%; text-align:center; margin-top:15px;">© 2026 PrimeLoop Studio</div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("0w_N8bAQMmRvveXvV"); // replace with your EmailJS user ID
+
+    const hamburger = document.getElementById('hamburger');
+    const menuPanel = document.getElementById('menu-panel');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menuPanel.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    menuPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menuPanel.classList.remove('active');
+      });
+    });
+
+    // EmailJS contact form
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      emailjs.sendForm('service_4ptp8zg','template_kkmhp9z', this)
+      .then(function(){ alert('Message sent!'); }, function(error){ alert('Oops... ' + JSON.stringify(error)); });
+      this.reset();
+    });
+  </script>
+</body>
+</html>    });
+
+    // EmailJS contact form
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      emailjs.sendForm('service_4ptp8zg','template_kkmhp9z', this)
+      .then(function(){ alert('Message sent!'); }, function(error){ alert('Oops... ' + JSON.stringify(error)); });
+      this.reset();
+    });
+  </script>
+</body>
+</html>      backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 20px;
