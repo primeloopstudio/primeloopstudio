@@ -12,15 +12,28 @@
     a { text-decoration:none; color:inherit; }
 
     /* NAVBAR */
-    nav { position: fixed; width:100%; top:0; left:0; display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background:#FFFFFF; z-index:1000; }
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #FFFFFF;
+      z-index: 2000;
+    }
     nav .logo {
-  display: flex;
-  align-items: center;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
     }
     nav .logo img {
-  height: 45px;
-  width: auto;
-  display: block;
+      height: 45px;
+      width: auto;
+      display: block;
     }
     nav .hamburger { width:35px; height:35px; background:#F5F7FA; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:6px; position:relative; z-index:1100; }
     nav .hamburger div { width:22px; height:2px; background:#000; transition:0.3s; position:relative; }
