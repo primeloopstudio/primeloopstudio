@@ -24,6 +24,12 @@
       background: #FFFFFF;
       z-index: 3000;
     }
+    nav {
+      transition: transform 0.4s ease;
+    }
+    nav.hide {
+      transform: translateY(-100%);
+    }
     nav .logo {
       display: flex;
       align-items: center;
@@ -292,7 +298,22 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script>
     emailjs.init("0w_N8bAQMmRvveXvV"); // replace with your EmailJS user ID
+    
+  let lastScroll = 0;
+  const navbar = document.querySelector("nav");
 
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      navbar.classList.add("hide");   // scrolling down
+    } else {
+      navbar.classList.remove("hide"); // scrolling up
+    }
+
+    lastScroll = currentScroll;
+  });
+    
     const hamburger = document.getElementById('hamburger');
     const menuPanel = document.getElementById('menu-panel');
     
