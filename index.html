@@ -71,17 +71,56 @@
 
   z-index: 2500;
 }
+    
 #menu-panel.active {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
+    
 #menu-panel a {
   margin: 20px 0;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
   color: #000000;
+}
+    
+    .menu-links {
+  text-align: center;
+}
+    
+.menu-links a {
+  display: block;
+  margin: 20px 0;
+  font-size: 28px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #FFF;
+  transition: 0.3s ease;
+}
+    
+/* Active link */
+.menu-links a.active {
+  color: #519EFF;
+}
+    
+    .menu-cta {
+  position: absolute;
+  bottom: 40px;
+  width: 90%;
+  text-align: center;
+}
+    
+.cta-btn {
+  display: block;
+  padding: 18px;
+  border-radius: 20px;
+  background: #519EFF;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
 }
     
     /* HERO */
@@ -314,6 +353,27 @@
     }
 
     lastScroll = currentScroll;
+  });
+
+    const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".menu-links a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
   });
     
     const hamburger = document.getElementById('hamburger');
