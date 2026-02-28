@@ -97,43 +97,77 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       transition: 0.3s ease;
     }
     
-/* Active link */
-.menu-links a.active {
-  color: #4F80FF;
-}
-    
+    /* Active link */
+    .menu-links a.active {
+      color: #4F80FF;
+    }    
     .menu-cta {
-  position: absolute;
-  bottom: 40px;
-  width: 90%;
-  text-align: center;
-}
-    
-.cta-btn {
-  display: block;
-  padding: 16px 27px;
-  border-radius: 12px;
-  border: 1px solid #3972FF;
-  background: #4F80FF;
-  color: #FFFFFF;
-  font-family: 'Geist', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.cta-btn:hover {
-  transform: scale(1.05);
-}
+      position: absolute;
+      bottom: 40px;
+      width: 90%;
+      text-align: center;
+    }    
+    .cta-btn {
+      display: block;
+      padding: 16px 27px;
+      border-radius: 12px;
+      border: 1px solid #3972FF;
+      background: #4F80FF;
+      color: #FFFFFF;
+      font-family: 'Geist', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
     
     /* HERO */
-    .hero { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; min-height:90vh; padding:0 40px; background:#FFFFFF; }
-    .hero .subtitle { color:#BBBCC0; font-size:18px; margin-bottom:10px; font-family:'Baloo 2'; font-weight:600; }
-    .hero .title { font-family:'Baloo 2'; font-weight:800; font-size:48px; line-height:1.2; color:#1B202C; margin-bottom:20px; }
-    .hero .cta { padding:14px 28px; background:#519EFF; color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:18px; margin-bottom:20px; }
-    .hero .animation { margin-top:20px; height:5px; width:50px; background:#519EFF; border-radius:2px; }
+    .hero {
+      background: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-heading {
+      font-family: 'Phudu', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      line-height: 1.2;
+      margin-bottom: 25px;
+      color: #232939;
+    }
+    .hero-heading .light {
+      color: #BBBCC0;
+    }
+    .hero-subtext {
+      font-family: 'Geist', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #E4E6E9;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #4F80FF;
+      color: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid #3972FF;
+      font-family: 'Geist', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
 
     /* SERVICES */
     .services { padding:80px 40px; background:#F5F6FA; display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; }
@@ -201,7 +235,6 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 <!-- HAMBURGER PANEL -->
 <div id="menu-panel">
-
   <div class="menu-links">
     <a href="#hero">HOME</a>
     <a href="#services">SERVICES</a>
@@ -209,21 +242,27 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     <a href="#pricing">PRICING</a>
     <a href="#contact">CONTACT</a>
   </div>
-
   <div class="menu-cta">
     <a href="#contact" class="cta-btn">START YOUR PROJECT</a>
   </div>
-
 </div>
   
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="subtitle">STOP PLANNING</div>
-    <div class="title">HIGH-RETENTION EDITS<br>FOR CREATORS & BRANDS</div>
-    <p class="subtitle">We turn raw footage into scroll-stopping content that keeps your audience watching.</p>
-    <button class="cta">Start Your Project</button>
-    <div class="animation"></div>
-  </section>
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1 class="hero-heading">
+      <span class="light">STOP PLANNING.</span><br>
+      HIGH RETENTION EDITS FOR<br>
+      CREATORS & BRANDS
+    </h1>
+    <p class="hero-subtext">
+      We turn raw footage into scroll-stopping content that keeps your audience watching.
+    </p>
+    <a href="#contact" class="hero-cta">
+      START YOUR PROJECT
+    </a>
+  </div>
+</section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
