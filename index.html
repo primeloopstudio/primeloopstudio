@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrimeLoop Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@500&display=swap" rel="stylesheet">
   <style>
     /* RESET */
@@ -74,31 +79,35 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: auto;
 }
     
-#menu-panel .menu-links a {
-  margin: 20px 0;
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #000000;
-}
-    
+#menu-panel
     .menu-links {
-  text-align: center;
-}
+      text-align: center;
+    }
+
+    .menu-links a {
+      display: block;
+      margin: 20px 0;
+      font-size: 32px;
+      font-family: 'Phudu', sans-serif;
+      font-weight: 900;
+      text-decoration: none;
+      color: #1B202C;
+      transition: 0.3s ease;
+    }
     
-.menu-links a {
-  display: block;
-  margin: 20px 0;
-  font-size: 28px;
-  font-weight: 800;
-  text-decoration: none;
-  color: #FFF;
-  transition: 0.3s ease;
-}
+    .menu-links a {
+      display: block;
+      margin: 20px 0;
+      font-size: 28px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #FFF;
+      transition: 0.3s ease;
+    }
     
 /* Active link */
 .menu-links a.active {
-  color: #519EFF;
+  color: #4F80FF;
 }
     
     .menu-cta {
@@ -112,10 +121,16 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   padding: 18px;
   border-radius: 20px;
-  background: #519EFF;
+  background: #4F80FF;
   color: #FFFFFF;
-  font-weight: 700;
+  font-family: 'Geist', sans-serif;
+  font-weight: 500;
   text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
 }
     
     /* HERO */
@@ -201,7 +216,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   </div>
 
   <div class="menu-cta">
-    <a href="#contact" class="cta-btn">Start Your Project</a>
+    <a href="#contact" class="cta-btn">START YOUR PROJECT</a>
   </div>
 
 </div>
