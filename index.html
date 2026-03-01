@@ -201,6 +201,23 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translateY(0);
       }
     }
+    .trust-wrapper {
+      text-align: center;
+      margin: 70px 0;
+    }
+    .trust-text {
+      font-family: 'Phudu', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      /* Animation part */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.9s;
+    }
     
     /* SERVICES */
     .services { padding:80px 40px; background:#F5F6FA; display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; }
@@ -296,7 +313,13 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     </a>
   </div>
 </section>
-
+  
+<div class="trust-wrapper">
+  <p class="trust-text">
+    TRUSTED BY CREATORS & GROWING BRANDS WORLDWIDE
+  </p>
+</div>
+  
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="service-card">
