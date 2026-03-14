@@ -303,11 +303,108 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* WHY US */
-    .why-us { padding:80px 40px; background:#FFFFFF display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-    .why-box { position:relative; background:#F5F7FA; border-radius:12px; padding:50px 20px 20px 20px; display:flex; flex-direction:column; justify-content:center; min-height:180px; }
-    .why-box .icon { position:absolute; top:-20px; width:40px; height:40px; border-radius:50%; background:#519EFF; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; }
-    .why-box h4 { margin-bottom:10px; font-family:'Baloo 2'; font-weight:800; }
-    .why-box p { font-size:24px; font-weight:600; }
+    .why-us{
+      background:#FFFFFF;
+      padding:80px 20px;
+      text-align:center;
+    }
+    .why-header{
+      max-width:720px;
+      margin:0 auto 60px;
+    }
+    .why-title{
+      font-family:'Phudu',sans-serif;
+      font-weight:900;
+      font-size:36px;
+      color:#232939;
+      margin-bottom:15px;
+    }
+    .why-intro{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:#585858;
+    }
+    /* GRID */
+    .why-grid{
+      max-width:900px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:25px;
+    }
+    /* CARD */
+    .why-card{
+      background:#F5F6FA;
+      border:1px solid #E4E6E9;
+      border-radius:12px;
+      padding:24px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    /* MIRROR */
+    .why-card.reverse{
+      flex-direction:row-reverse;
+    }
+    /* ICON + TEXT */
+    .why-info{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+    }
+    .icon-box{
+      width:36px;
+      height:36px;  border:1px solid #E4E6E9;
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#FFFFFF;
+    }
+    .icon-box svg{
+      width:20px;
+      height:20px;
+      stroke:#4F80FF;
+    }
+    /* TEXT */
+    .why-text{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:#585858;
+      font-size:14px;
+    }
+    /* DIVIDER */
+    .why-divider{
+      width:1px;
+      height:60px;
+      background:#E4E6E9;
+      margin:0 20px;
+    }
+    /* NUMBER BOX */
+    .number-box{
+      background:#F5F6F7;
+      border:1px solid #E4E6E9;
+      border-radius:10px;
+      padding:12px 18px;
+      font-family:'Phudu',sans-serif;
+      font-weight:900;
+      font-size:26px;
+      color:#4F80FF;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+}
 
     /* PRICING */
     .pricing { padding:80px 40px; background:#F5F6FA; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
@@ -469,28 +566,76 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   <!-- WHY US -->
   <section class="why-us" id="why-us">
-    <div class="why-box">
-      <div class="icon">✓</div>
-      <h4>Projects Completed</h4>
-      <p>40+</p>
+    <div class="why-header">
+      <h2 class="why-title">WHY US</h2>
+      <p class="why-intro">
+        We combine cinematic quality with strategic editing to turn your views into a loyal community.
+      </p>
     </div>
-    <div class="why-box">
-      <div class="icon">😊</div>
-      <h4>Happy Clients</h4>
-      <p>30+</p>
-    </div>
-    <div class="why-box">
-      <div class="icon">⏱️</div>
-      <h4>Years Of Experience</h4>
-      <p>1.5+</p>
-    </div>
-    <div class="why-box">
-      <div class="icon">⭐</div>
-      <h4>Client Satisfaction</h4>
-      <p>97%</p>
+    <div class="why-grid">
+      <!-- CARD 1 -->
+      <div class="why-card">
+        <div class="why-info">
+          <div class="icon-box">
+            <!-- PROJECTS SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6 7 17l-5-5"/>
+              <path d="m22 10-7.5 7.5L13 16"/>
+            </svg>
+          </div>
+          <div class="why-text">Projects Completed</div>
+        </div>
+        <div class="why-divider"></div>
+        <div class="number-box">40+</div>
+        </div>
+      <!-- CARD 2 (MIRROR) -->
+      <div class="why-card reverse">
+        <div class="why-info">
+          <div class="icon-box">
+            <!-- HAPPY SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,176,108Zm-1.07,48c-10.29,17.79-27.4,28-46.93,28s-36.63-10.2-46.92-28a8,8,0,1,1,13.84-8c7.47,12.91,19.21,20,33.08,20s25.61-7.1,33.07-20a8,8,0,0,1,13.86,8Z"/>
+            </svg>
+          </div>
+          <div class="why-text">Happy Clients</div>
+        </div>
+        <div class="why-divider"></div>
+        <div class="number-box">30+</div>
+      </div>
+      <!-- CARD 3 -->
+      <div class="why-card">
+        <div class="why-info">
+          <div class="icon-box">
+            <!-- EXPERIENCE SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6 7 17l-5-5"/>
+              <path d="m22 10-7.5 7.5L13 16"/>
+            </svg>
+          </div>
+          <div class="why-text">Years of Experience</div>
+        </div>
+        <div class="why-divider"></div>
+        <div class="number-box">1.5+</div>
+      </div>
+      <!-- CARD 4 (MIRROR) -->
+      <div class="why-card reverse">
+        <div class="why-info">
+          <div class="icon-box">
+            <!-- DELIVERY SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/>
+              <path d="M14 2v5a1 1 0 0 0 1 1h5"/>
+              <path d="m9 15 2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="why-text">On-Time Delivery</div>
+        </div>
+        <div class="why-divider"></div>
+        <div class="number-box">100%</div>
+      </div>
     </div>
   </section>
-
+  
   <!-- PRICING -->
   <section class="pricing" id="pricing">
     <div class="price-card">
