@@ -213,11 +213,92 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     /* SERVICES */
-    .services { padding:80px 40px; background:#F5F6FA; display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; }
-    .service-card { background:#FFFFFF; border-radius:12px; padding:20px; flex:1; min-width:250px; box-sizing:border-box; }
-    .service-card h3 { font-family:'Baloo 2'; font-weight:800; margin-bottom:15px; }
-    .service-card ul { list-style:none; padding-left:0; }
-    .service-card ul li::before { content:'•'; color:#519EFF; margin-right:8px; font-weight:bold; }
+    .services{
+      background:#F5F6FA;
+      padding:80px 20px;
+      text-align:center;
+    }
+    .services-header{
+      max-width:750px;
+      margin:0 auto 60px;
+    }
+    .services-title{
+      font-family:'Phudu',sans-serif;
+      font-weight:900;
+      font-size:36px;
+      color:#232939;
+      margin-bottom:15px;
+    }
+    .services-intro{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:#585858;
+    }
+    .services-cards{
+      display:flex;
+      gap:30px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .service-card{
+      background:#F5F6F7;
+      border:1px solid #E4E6E9;
+      border-radius:14px;
+      padding:30px;
+      width:320px;
+      text-align:left;
+    }
+    .service-top h3{
+      font-family:'Phudu',sans-serif;
+      font-weight:600;
+      color:#232939;
+    }
+    .service-top p{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:#585858;
+      font-size:14px;
+    }
+    .plan-title{
+      text-align:center;
+      font-family:'Phudu',sans-serif;
+      font-weight:900;
+      color:#232939;
+      margin:20px 0;
+    }
+    .features{
+      padding-left:18px;
+    }
+    .features li{
+      font-family:'Geist',sans-serif;
+      margin-bottom:6px;
+    }
+    .features li::marker{
+      color:#4F80FF;
+    }
+    .divider{
+      height:1px;
+      background:#F0F0F0;
+      margin:20px 0;
+    }
+    .service-cta{
+      display:block;
+      margin:0 auto;
+      padding:8px 14px;
+      background:#4F80FF;
+      color:#FFFFFF;
+      border-radius:10px;
+      border:1px solid #3972FF;
+      font-family:'Geist',sans-serif;
+      font-weight:500;
+      font-size:12px;
+      letter-spacing:0.5px;
+      text-decoration:none;
+      transition:0.3s ease;
+    }
+    .service-cta:hover{
+      background:#3972FF;
+    }
 
     /* WHY US */
     .why-us { padding:80px 40px; background:#FFFFFF display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
@@ -308,39 +389,79 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 </section>
   
   <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="service-card">
-      <h3>Youtube Automation Editing</h3>
-      <ul>
-        <li>Automated upload-ready videos</li>
-        <li>Thumbnail integration</li>
-        <li>SEO optimized titles & tags</li>
-        <li>Captions & subtitles</li>
-        <li>Basic color correction</li>
-        <li>3 revisions per video</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <h3>Short-Form Content Editing</h3>
-      <ul>
-        <li>Instagram / TikTok / YouTube</li>
-        <li>Fast turnaround</li>
-        <li>Motion graphics & SFX</li>
-        <li>Text & captions</li>
-        <li>Color grading & audio fix</li>
-        <li>2 revisions per video</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <h3>Long-Form YouTube Editing</h3>
-      <ul>
-        <li>Full-length video editing</li>
-        <li>Advanced color grading</li>
-        <li>Transitions & effects</li>
-        <li>Text & graphics overlays</li>
-        <li>Sound design & audio balancing</li>
-        <li>5 revisions per video</li>
-      </ul>
+  <section class="services" id="services">  <div class="services-header">
+    <h2 class="services-title">SERVICES WE PROVIDE</h2>
+    <p class="services-intro">
+      Professional post-production designed to scale your reach and streamline your workflow.
+    </p>
+  </div>
+    <div class="services-cards">
+      <!-- CARD 1 -->
+      <div class="service-card">
+        <div class="service-top">
+          <h3>Youtube Automation</h3>
+          <p>People running "Cash Cow" channels who don't want to touch the video at all.</p>
+        </div>
+        <div class="divider"></div>
+        <h4 class="plan-title">PrimeLoop AUTO-PILOT</h4>
+        <ul class="features">
+          <li>Automated upload-ready videos</li>
+          <li>FREE: SEO optimized Titles & Tags</li>
+          <li>Thumbnail integration</li>
+          <li>Captions & Subtitles</li>
+          <li>Basic color correction</li>
+          <li>Copyright-Free Music</li>
+          <li>Raw File Storage upto 14 Days</li>
+          <li>3 Revisions per video</li>
+          <li>Turnaround: 3-4 Business Days</li>
+        </ul>
+        <div class="divider"></div>
+        <a href="#contact" class="service-cta">START YOUR PROJECT</a>
+      </div>
+      <!-- CARD 2 -->
+      <div class="service-card">
+        <div class="service-top">
+          <h3>Short-Form Content</h3>
+          <p>Influencers & Brands looking to dominate TikTok, Reels and Shorts.</p>
+        </div>
+        <div class="divider"></div>
+        <h4 class="plan-title">PrimeLoop VELOCITY</h4>
+        <ul class="features">
+          <li>TikTok, Reels & Shorts Formatting</li>
+          <li>Viral Hook Optimization</li>
+          <li>High-energy Motion Graphics & SFX</li>
+          <li>Dynamic Text & Caption (Alex Hormozi Style)</li>
+          <li>Color Grading & Audio balancing</li>
+          <li>Dedicated Project Manager</li>
+          <li>Copyright-Free Trending Music</li>
+          <li>2 Revisions per video</li>
+          <li>Turnaround: 24-48 Business Hours</li>
+        </ul>
+        <div class="divider"></div>
+        <a href="#contact" class="service-cta">START YOUR PROJECT</a>
+      </div>
+      <!-- CARD 3 -->
+      <div class="service-card">
+        <div class="service-top">
+          <h3>Long-Form Youtube</h3>
+          <p>Educational creators, Storytellers and Documentary-style YouTubers.</p>
+        </div>
+        <div class="divider"></div>
+        <h4 class="plan-title">PrimeLoop Signature</h4>
+        <ul class="features">
+          <li>Full-length Cinematic Editing</li>
+          <li>Advanced Color Grading & Storytelling</li>
+          <li>Complex Transitions & Visual Effects</li>
+          <li>Text & Graphics Overlays</li>
+          <li>Premium Sound Design & Audio Enhancement</li>
+          <li>Dedicated Project Manager</li>
+          <li>Cloud Storage Archive upto 14 Days</li>
+          <li>5 Revisions per video</li>
+          <li>Turnaround: 3-5 Business Days</li>
+        </ul>
+        <div class="divider"></div>
+        <a href="#contact" class="service-cta">START YOUR PROJECT</a>
+      </div>
     </div>
   </section>
 
