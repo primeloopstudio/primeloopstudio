@@ -575,7 +575,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">Projects Completed</div>
         </div>
         <div class="why-divider"></div>
-        <div class="number-box">40+</div>
+        <div class="number-box" data-target="40">0</div>+
         </div>
       <!-- CARD 2 (MIRROR) -->
       <div class="why-card reverse">
@@ -589,7 +589,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">Happy Clients</div>
         </div>
         <div class="why-divider"></div>
-        <div class="number-box">30+</div>
+        <div class="number-box" data-target="30">0</div>+
       </div>
       <!-- CARD 3 -->
       <div class="why-card">
@@ -612,7 +612,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">Years of Experience</div>
         </div>
         <div class="why-divider"></div>
-        <div class="number-box">1.5+</div>
+        <div class="number-box" data-target="1.5">0</div>+
       </div>
       <!-- CARD 4 (MIRROR) -->
       <div class="why-card reverse">
@@ -628,7 +628,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">On-Time Delivery</div>
         </div>
         <div class="why-divider"></div>
-        <div class="number-box">100%</div>
+        <div class="number-box" data-target="100">0</div>%
       </div>
     </div>
   </section>
@@ -762,6 +762,28 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       emailjs.sendForm('service_4ptp8zg','template_kkmhp9z', this)
       .then(function(){ alert('Message sent!'); }, function(error){ alert('Oops... ' + JSON.stringify(error)); });
       this.reset();
+    });
+    
+    // WHY US number counter
+    const counters = document.querySelectorAll('.number-box');
+    counters.forEach(counter => {
+      const target = parseFloat(counter.getAttribute('data-target'));
+      let count = 0;
+      const updateCounter = () => {
+        const increment = target / 80;
+        if (count < target) {
+          count += increment;
+          if (target % 1 !== 0) {
+            counter.innerText = count.toFixed(1);
+          } else {
+            counter.innerText = Math.ceil(count);
+          }
+          setTimeout(updateCounter, 25);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCounter();
     });
   </script>
 </body>
