@@ -422,7 +422,6 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       padding: 80px 20px;
       text-align: center;
     }
-    /* HEADER */
     .pricing-header {
       max-width: 720px;
       margin: 0 auto 60px;
@@ -439,27 +438,26 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       font-weight: 300;
       font-size: 16px;
       color: #585858;
+      margin-bottom: 60px;
     }
-    /* GRID */
     .pricing-grid {
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr;
       gap: 25px;
       max-width: 720px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 10px;
       box-sizing: border-box;
     }
-    /* CARD */
     .price-card {
-      background:#FFFFFF;
-      border:1px solid #E4E6E9;
-      border-radius:12px;
-      padding:30px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      box-sizing:border-box;
+      background: #FFFFFF;
+      border: 1px solid #E4E6E9;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-sizing: border-box;
     }
     /* PLAN NAME */
     .price-card h3 {
@@ -470,7 +468,6 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       text-align: left;
       margin-bottom: 8px;
     }
-    /* PACKAGE NAME */
     .price-card .package {
       font-family: 'Geist', sans-serif;
       font-weight: 500;
@@ -479,7 +476,6 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       text-align: left;
       margin-bottom: 20px;
     }
-    /* PRICE */
     .price-card .price {
       font-family: 'Phudu', sans-serif;
       font-weight: 900;
@@ -507,7 +503,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       font-size: 14px;
       color: #585858;
     }
-    /* CHECK ICON USING SYMBOL */
+    /* CHECK ICON */
     .price-card ul li svg {
       width: 20px;
       height: 20px;
@@ -529,6 +525,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       text-decoration: none;
       cursor: pointer;
       transition: 0.3s ease;
+      align-self: center;
     }
     .price-card button:hover {
       background: #3972FF;
@@ -536,7 +533,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     /* RESPONSIVE */
     @media(max-width:768px){
       .pricing-grid {
-        flex-direction:columns;
+        grid-template-columns: 1fr;
       }
     }
 
