@@ -575,6 +575,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">Projects Completed</div>
         </div>
         <div class="why-divider"></div>
+        <!-- Projects -->
         <div class="number-box" data-target="40" data-suffix="+">0</div>
         </div>
       <!-- CARD 2 (MIRROR) -->
@@ -589,6 +590,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">Happy Clients</div>
         </div>
         <div class="why-divider"></div>
+        <!-- Clients -->
         <div class="number-box" data-target="30" data-suffix="+">0</div>
       </div>
       <!-- CARD 3 -->
@@ -612,6 +614,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">Years of Experience</div>
         </div>
         <div class="why-divider"></div>
+        <!-- Experience -->
         <div class="number-box" data-target="1.5" data-suffix="+">0</div>
       </div>
       <!-- CARD 4 (MIRROR) -->
@@ -628,6 +631,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           <div class="why-text">On-Time Delivery</div>
         </div>
         <div class="why-divider"></div>
+        <!-- Delivery -->
         <div class="number-box" data-target="100" data-suffix="%">0</div>
       </div>
     </div>
@@ -765,26 +769,39 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     });
     
     // WHY US number counter
-    const counters = document.querySelectorAll('.number-box');
-    counters.forEach(counter => {
-      const target = parseFloat(counter.getAttribute('data-target'));
-      let count = 0;
-      const updateCounter = () => {
-        const increment = target / 80;
-        if (count < target) {
-          count += increment;
-          if (target % 1 !== 0) {
-            counter.innerText = count.toFixed(1);
-          } else {
-            counter.innerText = Math.ceil(count);
+    const counters = document.querySelectorAll(".number-box");
+    let started = false;
+    function startCounter(){
+      counters.forEach(counter => {
+        const target = parseFloat(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+        let count = 0;
+        const update = () => {
+          const increment = target / 80;
+          if(count < target){
+            count += increment;
+            if(target % 1 !== 0){
+              counter.innerText = count.toFixed(1) + suffix;
+            }else{
+              counter.innerText = Math.ceil(count) + suffix;
+            }
+            requestAnimationFrame(update);
+          }else{
+            counter.innerText = target + suffix;
           }
-          setTimeout(updateCounter, 25);
-        } else {
-          counter.innerText = target;
+        };
+        update();
+      });
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting && !started){
+          startCounter();
+          started = true;
         }
-      };
-      updateCounter();
+      });
     });
+    observer.observe(document.querySelector("#why-us"));
   </script>
 </body>
 </html>
