@@ -483,6 +483,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       font-size: 36px;
       color: #4F80FF;
       margin-bottom: 20px;
+      text-align: center;
     }
     /* FEATURES LIST */
     .price-card ul {
@@ -503,16 +504,13 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       font-size: 14px;
       color: #585858;
     }
-    /* CHECK ICON */
-    .price-card ul li .icon-check {
-      display: inline-block;
+    /* CHECK ICON USING SYMBOL */
+    .price-card ul li svg {
       width: 20px;
       height: 20px;
       flex-shrink: 0;
-      color: #4F80FF;
-      background: none;
-      mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>') no-repeat center;
-      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>') no-repeat center;
+      fill: none;
+      stroke: #4F80FF;
     }
     .price-card button {
       display: inline-block;
