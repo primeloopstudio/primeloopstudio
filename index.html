@@ -442,11 +442,11 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     /* GRID */
     .pricing-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 25px;
+      max-width: 720px;
+      margin: auto;
     }
     /* CARD */
     .price-card {
@@ -533,7 +533,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     /* RESPONSIVE */
     @media(max-width:768px){
       .pricing-grid {
-        grid-template-columns:1fr;
+        flex-direction:columns;
       }
     }
 
