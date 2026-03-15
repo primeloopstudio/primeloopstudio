@@ -442,23 +442,24 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     /* GRID */
     .pricing-grid {
-      display: flex;
-      flex-direction: column;
+      display:grid;
+      grid-template-columns: 1fr;
       gap: 25px;
       max-width: 720px;
-      margin:0 auto;
-      align-items:stretch;
+      margin: 0 auto;
+      padding: 0 20px;
       box-sizing: border-box;
     }
     /* CARD */
     .price-card {
-      background: #FFFFFF;
+      background:#FFFFFF;
       border:1px solid #E4E6E9;
-      border-radius: 12px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      border-radius:12px;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-sizing:border-box;
     }
     /* PLAN NAME */
     .price-card h3 {
