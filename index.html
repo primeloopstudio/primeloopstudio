@@ -417,14 +417,127 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* PRICING */
-    .pricing { padding:80px 40px; background:#F5F6FA; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
-    .price-card { background:#F5F7FA; flex:1; min-width:250px; border-radius:12px; padding:20px; display:flex; flex-direction:column; align-items:flex-start; position:relative; }
-    .price-card.most-popular { background:#1B202C; color:#fff; }
-    .price-card .price { font-size:36px; font-weight:800; text-align:center; margin:15px 0; color:#519EFF; }
-    .price-card .package { font-size:16px; color:#BBBCC0; text-align:left; margin-bottom:15px; }
-    .price-card ul { list-style:none; padding-left:0; width:100%; }
-    .price-card ul li::before { content:'•'; color:#519EFF; margin-right:8px; font-weight:bold; }
-    .price-card button { margin-top:20px; align-self:center; padding:12px 24px; background:#519EFF; color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; }
+    .pricing {
+      background: #F5F6FA;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    /* HEADER */
+    .pricing-header {
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+    .pricing-title {
+      font-family: 'Phudu', sans-serif;
+      font-weight: 900;
+      font-size: 36px;
+      color: #232939;
+      margin-bottom: 15px;
+    }
+    .pricing-intro {
+      font-family: 'Geist', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: #585858;
+    }
+    /* GRID */
+    .pricing-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    /* CARD */
+    .price-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    /* PLAN NAME */
+    .price-card h3 {
+      font-family: 'Phudu', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #232939;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+    /* PACKAGE NAME */
+    .price-card .package {
+      font-family: 'Geist', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #585858;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    /* PRICE */
+    .price-card .price {
+      font-family: 'Phudu', sans-serif;
+      font-weight: 900;
+      font-size: 36px;
+      color: #4F80FF;
+      margin-bottom: 20px;
+    }
+    /* FEATURES LIST */
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    /* EACH FEATURE */
+    .price-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: 'Geist', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      color: #585858;
+    }
+    /* CHECK ICON */
+    .price-card ul li .icon-check {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #4F80FF;
+      background: none;
+      mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>') no-repeat center;
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>') no-repeat center;
+    }
+    .price-card button {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #4F80FF;
+      color: #FFFFFF;
+      border-radius: 10px;
+      border: 1px solid #3972FF;
+      font-family: 'Geist', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .price-card button:hover {
+      background: #3972FF;
+    }
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .pricing-grid {
+        grid-template-columns:1fr;
+      }
+    }
 
     /* CONTACT */
     .contact { padding:80px 40px; background:#FFFFFF; }
@@ -662,50 +775,71 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   </section>
   
   <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="price-card" id="elite-plan">
-      <h3>ELITE</h3>
-      <div class="package">The Foundation Package</div>
-      <div class="price">$359</div>
-      <ul>
-        <li>Best for TikTok, Reels, Shorts</li>
-        <li>Color Correction & Basic Grading</li>
-        <li>Simple Transitions & Cuts</li>
-        <li>Captions and Basic Effects</li>
-        <li>2 Revisions per video</li>
-        <li>3-4 Business Days Turnaround</li>
-      </ul>
-      <button>Start Your Project</button>
+  <section class="pricing" id="pricing" style="background:#F5F6FA; padding:80px 20px; text-align:center;">
+    <!-- SECTION HEADER -->
+    <div class="pricing-header">
+      <h2 class="pricing-title" style="font-family:'Phudu',sans-serif; font-weight:900; font-size:36px; color:#232939; margin-bottom:15px;">CHOOSE YOUR PLAN</h2>
+      <p class="pricing-intro" style="font-family:'Geist',sans-serif; font-weight:300; font-size:16px; color:#585858; max-width:720px; margin:auto;">
+        Transparent pricing for every stage of your growth. Select the investment and elevate your brand.
+      </p>
     </div>
-
-    <div class="price-card" id="infinity-plan">
-      <h3>INFINITY</h3>
-      <div class="package">The Growth Package</div>
-      <div class="price">$549</div>
-      <ul>
-        <li>Best for YouTube Growth</li>
-        <li>Youtube Automation Editing</li>
-        <li>SFX & Motion Graphics & Overlays</li>
-        <li>Advanced Color Grading & Sound Design</li>
-        <li>3 Revisions per video</li>
-        <li>2-3 Business Days Turnaround</li>
-      </ul>
-      <button>Start Your Project</button>
-    </div>
-
-    <div class="price-card" id="legendary-plan">
-      <h3>LEGENDARY</h3>
-      <div class="package">The Ultimate Package</div>
-      <div class="price">$799</div>
-      <ul>
-        <li>Full Brand Presence</li>
-        <li>Motion Graphics & Animation</li>
-        <li>Viral Hook Strategy</li>
-        <li>Multi-Channel Formatting</li>
-        <li>Unlimited Revisions</li>
-        <li>48–72 Hours(Priority)</li>
-      </ul>
-      <button>Start Your Project</button>
+    <!-- SVG Symbol for Check Icon -->
+    <svg style="display:none;">
+    <symbol id="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    </svg>
+    <!-- PRICING GRID -->
+    <div class="pricing-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:25px; max-width:1200px; margin:40px auto 0;">
+      <!-- ELITE PLAN -->
+      <div class="price-card" id="elite-plan" style="background:#F5F7FA; border-radius:12px; padding:24px 20px; display:flex; flex-direction:column; align-items:flex-start;">
+        <h3 style="font-family:'Phudu',sans-serif; font-weight:600; color:#232939; margin-bottom:5px;">ELITE</h3>
+        <div class="package" style="font-family:'Geist',sans-serif; font-weight:500; color:#585858; margin-bottom:15px;">The Foundation Package</div>
+        <div class="price" style="font-family:'Phudu',sans-serif; font-weight:900; font-size:36px; color:#4F80FF; text-align:center; width:100%; margin-bottom:20px;">$359</div>
+        <ul>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Best for TikTok, Reels & Shorts</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Essential Visuals, Cuts & Hooks</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Dynamic Captions & Effects</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Color Correction & Audio Fix</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Platform-Specific Formatting</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> 2 Revisions per video</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Turnaround: 3-4 Business Days</li>
+        </ul>
+        <button>Start Your Project</button>
+      </div>
+      <!-- INFINITY PLAN -->
+      <div class="price-card" id="infinity-plan" style="background:#F5F7FA; border-radius:12px; padding:24px 20px; display:flex; flex-direction:column; align-items:flex-start;">
+        <h3 style="font-family:'Phudu',sans-serif; font-weight:600; color:#232939; margin-bottom:5px;">INFINITY</h3>
+        <div class="package" style="font-family:'Geist',sans-serif; font-weight:500; color:#585858; margin-bottom:15px;">The Growth Package</div>
+        <div class="price" style="font-family:'Phudu',sans-serif; font-weight:900; font-size:36px; color:#4F80FF; text-align:center; width:100%; margin-bottom:20px;">$549</div>
+        <ul>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Full Channel Synergy</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Advanced Motion Graphics & SFX</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> SEO Titles, Tags & Thumbnail Sync</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Essential Sound Design</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Advanced Color Grading</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> 3 Revisions per video</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Turnaround: 2-3 Business Days</li>
+        </ul>
+        <button>Start Your Project</button>
+      </div>
+      <!-- LEGENDARY PLAN -->
+      <div class="price-card" id="legendary-plan" style="background:#F5F7FA; border-radius:12px; padding:24px 20px; display:flex; flex-direction:column; align-items:flex-start;">
+        <h3 style="font-family:'Phudu',sans-serif; font-weight:600; color:#232939; margin-bottom:5px;">LEGENDARY</h3>
+        <div class="package" style="font-family:'Geist',sans-serif; font-weight:500; color:#585858; margin-bottom:15px;">The Ultimate Package</div>
+        <div class="price" style="font-family:'Phudu',sans-serif; font-weight:900; font-size:36px; color:#4F80FF; text-align:center; width:100%; margin-bottom:20px;">$799</div>
+        <ul>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Cinematic Authority</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Cinematic Storytelling</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Viral Hook Strategy</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Premium VFX & Sound Design</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Motion Graphics & Custom Animation</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Unlimited Revisions</li>
+          <li><svg class="icon-check"><use href="#check-icon"></use></svg> Turnaround: 24-48 Hours (Priority)</li>
+        </ul>
+        <button>Start Your Project</button>
+      </div>
     </div>
   </section>
 
