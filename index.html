@@ -353,6 +353,12 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       align-items:flex-start;
       gap:8px;
     }
+    .why-card:not(.mirrored) .why-info{
+      margin-right:25px;
+    }
+    .why-card.mirrored .why-info{
+      margin-left:25px;
+    }
     .icon-box{
       width:36px;
       height:36px;  border:1px solid #E4E6E9;
@@ -380,14 +386,6 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       height:60px;
       background:#E4E6E9;
       margin:0 20px;
-    }
-    .why-card:not(.mirrored) .why-divider{
-      margin-left:50px;
-      margin-right:6px;
-    }
-    .why-card.mirrored .why-divider{
-      margin-left:6px;
-      margin-right:50px;
     }
     /* NUMBER BOX */
     .number-box{
