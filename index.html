@@ -353,12 +353,6 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       align-items:flex-start;
       gap:8px;
     }
-    .why-card:not(.mirrored) .why-info{
-      margin-right:70px;
-    }
-    .why-card.mirrored .why-info{
-      margin-left:70px;
-    }
     .icon-box{
       width:36px;
       height:36px;  border:1px solid #E4E6E9;
@@ -383,15 +377,19 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     /* DIVIDER */
     .why-divider{
       width:1px;
-      height:60px;
+      align-self:stretch;
       background:#E4E6E9;
-      margin:0 20px;
+      margin:0;
     }
     /* NUMBER BOX */
     .number-box{
-      font-family:'Phudu', sans-serif;
+      width:90px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:'Phudu',sans-serif;
       font-weight:900;
-      font-size:36px;
+      font-size:28px;
       color:#4F80FF;
     }
     /* MOBILE */
