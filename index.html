@@ -400,6 +400,13 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       font-size:36px;
       color:#4F80FF;
       padding:24px 0;
+      background-color: #F5F6FA;
+      /* Zig-zag dot pattern */
+      background-image:
+        radial-gradient(#FFFFFF 2px, transparent 2px),
+        radial-gradient(#FFFFFF 2px, transparent 2px);
+      background-size: 10px 10px;
+      background-position: 0 0, 5px 5px;
     }
     /* MOBILE */
     @media(max-width:768px){
