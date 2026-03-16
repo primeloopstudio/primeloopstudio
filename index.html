@@ -57,26 +57,26 @@
     nav .hamburger.active div::before { transform:rotate(45deg); top:0; }
     nav .hamburger.active div::after { transform:rotate(-45deg); top:0; }
 
-/* HAMBURGER MENU PANEL */
-#menu-panel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  transform: translateY(-100%);
-pointer-events: none;
-
-transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  z-index: 2500;
-}
+    /* HAMBURGER MENU PANEL */
+    body.menu-open{
+      overflow: hidden;
+    }
+    #menu-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-100%);
+      pointer-events: none;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2500;
+    }
     
 #menu-panel.active {
   transform: translateY(0);
@@ -1127,7 +1127,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   </div>
 </footer>
 
-  <!-- JS -->
+  <!-- JAVASCRIPT -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script>
     emailjs.init("0w_N8bAQMmRvveXvV"); // replace with your EmailJS user ID
@@ -1174,6 +1174,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       menuPanel.classList.toggle('active');
+      document.body.classList.toggle("menu-open");
 });
 
     // Close menu on link click
@@ -1181,6 +1182,7 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         menuPanel.classList.remove('active');
+        document.body.classList.remove("menu-open");
   });
 });
 
