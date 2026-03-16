@@ -608,6 +608,11 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       font-size:500;
       cursor:pointer;
     }
+    .plan-selector button.active{
+      background:#4F80FF;
+      color:#FFFFFF;
+      border:1px solid #4F80FF;
+    }
     /* FORM INPUTS */
     #contactForm{
       display:flex;
@@ -1181,7 +1186,16 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     /* PLAN SELECTOR */
     function selectPlan(plan){
       document.getElementById("planField").value = plan;
+      const buttons = document.querySelectorAll(".plan-selector button");
+      buttons.forEach(btn=>{
+        btn.classList.remove("active");
+      });
+      const clicked = Array.from(buttons).find(btn => btn.innerText === plan);
+      if(clicked){
+        clicked.classList.add("active");
+      }
     }
+    
     /* CONTACT FORM */
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function(e){
