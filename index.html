@@ -1098,10 +1098,10 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       </div>
       <!-- FORM -->
       <form id="contactForm">
-        <input id="planField" type="text" placeholder="Selected Plan" readonly>
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" rows="5" required></textarea>
+        <input id="planField" name="plan" type="text" placeholder="Selected Plan" readonly>
+        <input name="user_name" type="text" placeholder="Name" required>
+        <input name="user_email" type="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Project Details" rows="5" required></textarea>
         <button type="submit" class="pricing-cta primary">SUBMIT</button>
       </form>
     </div>
