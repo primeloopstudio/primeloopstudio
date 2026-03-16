@@ -455,7 +455,7 @@
       box-sizing: border-box;
     }
     .price-card {
-      background: #F5F6FA;
+      background: #FFFFFF;
       border: 1px solid #BBBCC0;
       border-radius: 14px;
       padding: 30px;
@@ -466,7 +466,20 @@
       box-sizing: border-box;
     }
     #infinity-plan{
-      background:#FFFFFF;
+      position:relative;
+    }
+    .popular-badge{
+      position:absolute;
+      top:14px;
+      right:-35px;
+      background:#4F80FF;
+      color:#FFFFFF;
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      font-size:11px;
+      padding:4px 40px;
+      transform:rotate(45deg);
+      letter-spacing:0.5px;
     }
     /* PLAN NAME */
     .price-card h3 {
@@ -978,6 +991,7 @@
       </div>
       <!-- INFINITY PLAN -->
       <div class="price-card" id="infinity-plan">
+        <div class="popular-badge">POPULAR</div>
         <h3>INFINITY</h3>
         <div class="package">The Growth Package</div>
         <div class="price">$549</div>
