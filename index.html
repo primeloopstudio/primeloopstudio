@@ -492,35 +492,63 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       text-align: center;
     }
     /* FEATURES LIST */
-    .price-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 25px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    .price-card ul{
+      list-style:none;
+      padding:0;
+      margin:0 0 25px 0;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
-    /* EACH FEATURE */
-    .price-card ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-family: 'Geist', sans-serif;
-      font-weight: 300;
-      font-size: 14px;
-      color: #585858;
+    /* FEATURE ITEM */
+    .price-card ul li{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      font-size:14px;
+      color:#585858;
+      text-align:left;
     }
-    /* CHECK ICON */
-    .price-card ul li svg {
-      width: 25px;
-      height: 25px;
-      flex-shrink: 0;
-      margin-top:2px;
-      color:#232939;
+    /* SVG CHECK ICON */
+    .price-check{
+      width:18px;
+      height:18px;
+      fill:#232939;
+      flex-shrink:0;
     }
-    .price-card .home-cta{
-      align-self:center;
-      width:fit-content;
+    /* PRICING CTA */
+    .pricing-cta{
+      display:inline-block;
+      margin:20px auto 0;
+      padding:8px 14px;
+      border-radius:10px;
+      font-family:'Geist',sans-serif;
+      font-weight:500;
+      font-size:12px;
+      letter-spacing:0.5px;
+      text-decoration:none;
+      transition:0.3s ease;
+    }
+    /* INFINITY BUTTON */
+    .pricing-cta.primary{
+      background:#4F80FF;
+      color:#FFFFFF;
+      border:1px solid #3972FF;
+    }
+    .pricing-cta.primary:hover{
+      background:#3972FF;
+    }
+    /* ELITE + LEGENDARY */
+    .pricing-cta.light{
+      background:#F5F6FA;
+      color:#4F80FF;
+      border:1px solid #3972FF;
+    }
+    .pricing-cta.light:hover{
+      background:#4F80FF;
+      color:#FFFFFF;
     }
     /* RESPONSIVE */
     @media(max-width:768px){
@@ -763,6 +791,11 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   </section>
   
   <!-- PRICING -->
+  <svg style="display:none;">
+    <symbol id="check-icon" viewBox="0 0 256 256">
+      <path d="M128 24A104 104 0 1 0 232 128 104.11 104.11 0 0 0 128 24Zm45.66 85.66-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32Z"/>
+    </symbol>
+  </svg>
   <section class="pricing" id="pricing">
     <!-- HEADER -->
     <div class="pricing-header">
@@ -780,35 +813,49 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         <div class="price">$359</div>
         <ul>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Best for TikTok, Reels & Shorts
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Essential Visuals, Cuts & Hooks
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Dynamic Captions & Effects
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Color Correction & Audio Fix
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Platform-Specific Formatting
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             2 Revisions per video
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Turnaround: 3-4 Business Days
           </li>
         </ul>
-        <a href="#contact" class="hero-cta">START YOUR PROJECT</a>
+        <a href="#contact" class="pricing-cta light">START YOUR PROJECT</a>
       </div>
       <!-- INFINITY PLAN -->
       <div class="price-card" id="infinity-plan">
@@ -817,35 +864,49 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         <div class="price">$549</div>
         <ul>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Full Channel Synergy
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Advanced Motion Graphics & SFX
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             SEO Titles, Tags & Thumbnail Sync
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Essential Sound Design
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Advanced Color Grading
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             3 Revisions per video
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Turnaround: 2-3 Business Days
           </li>
         </ul>
-        <a href="#contact" class="hero-cta">START YOUR PROJECT</a>
+        <a href="#contact" class="pricing-cta primary">START YOUR PROJECT</a>
       </div>
       <!-- LEGENDARY PLAN -->
       <div class="price-card" id="legendary-plan">
@@ -854,35 +915,49 @@ transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         <div class="price">$799</div>
         <ul>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Cinematic Authority
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Cinematic Storytelling
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Viral Hook Strategy
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Premium VFX & Sound Design
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Motion Graphics & Custom Animation
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Unlimited Revisions
           </li>
           <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg class="price-check">
+              <use href="#check-icon"></use>
+            </svg>
             Turnaround: 24-48 Hours (Priority)
           </li>
         </ul>
-        <a href="#contact" class="hero-cta">START YOUR PROJECT</a>
+        <a href="#contact" class="pricing-cta light">START YOUR PROJECT</a>
       </div>
     </div>
   </section>
