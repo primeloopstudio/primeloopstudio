@@ -638,6 +638,20 @@
       color:#585858;
       margin-top:30px;
     }
+    /* ERROR */
+    .form-error{
+      font-family:'Geist', sans-serif;
+      font-size:12px;
+      color:#FF4D4D;
+      margin-top:6px;
+      opacity:0;
+      transition:0.3s ease;
+      display:none;
+    }
+    .form-error.show{
+      display:block;
+      opacity:1;
+    }
     /* POPUP */
     .popup-overlay{
       position:fixed;
@@ -1111,7 +1125,8 @@
       </div>
       <!-- FORM -->
       <form id="contactForm">
-        <input id="planField" name="plan" type="text" placeholder="Selected Plan" readonly required>
+        <input id="planField" name="plan" type="text" placeholder="Select Plan" readonly required>
+        <p id="planError" class="form-error">Please choose a plan</p>
         <input name="from_name" type="text" placeholder="Name" required>
         <input name="from_email" type="email" placeholder="Email" required>
         <textarea name="message" placeholder="Project Details" rows="5" required></textarea>
@@ -1206,6 +1221,7 @@
     /* PLAN SELECTOR */
     function selectPlan(plan){
       document.getElementById("planField").value = plan;
+      document.getElementById("planError").style.display = "none";
       const buttons = document.querySelectorAll(".plan-selector button");
       buttons.forEach(btn=>{
         btn.classList.remove("active");
@@ -1220,6 +1236,20 @@
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function(e){
       e.preventDefault();
+  
+      const planField = document.getElementById("planField");
+      const error = document.getElementById("planError");
+      const validPlans = ["ELITE", "INFINITY", "LEGENDARY"];
+      const selectedPlan = planField.value;
+      
+      // VALIDATION
+      if(!validPlans.includes(selectedPlan)){
+        error.classList.add("show");
+        return;
+      }
+      error.classList.remove("show");
+
+      // SEND EMAIL
       emailjs.sendForm(
         "service_4ptp8zg",
         "template_kkmhp9z",
@@ -1232,6 +1262,7 @@
                alert("Something went wrong.");
              });
     });
+    
     /* CLOSE POPUP */
     function closePopup(){
       document.getElementById("successPopup").style.display = "none";
