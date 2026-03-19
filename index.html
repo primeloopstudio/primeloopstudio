@@ -638,19 +638,30 @@
       color:#585858;
       margin-top:30px;
     }
-    /* ERROR */
+    /* ERROR TEXT */
     .form-error{
       font-family:'Geist', sans-serif;
       font-size:12px;
       color:#FF4D4D;
       margin-top:6px;
+      text-align:left;
       opacity:0;
-      transition:0.3s ease;
-      display:none;
+      transform:translateY(-4px);
+      transition:all 0.3s ease;
     }
+    /* SHOW ERROR */
     .form-error.show{
-      display:block;
       opacity:1;
+      transform:translateY(0);
+    }
+    /* INPUT BASE TRANSITION */
+    #planField{
+      transition:all 0.3s ease;
+    }
+    /* RED BORDER WITH GLOW */
+    .input-error{
+      border:1px solid #FF4D4D !important;
+      box-shadow:0 0 0 2px rgba(255,77,77,0.15);
     }
     /* POPUP */
     .popup-overlay{
@@ -1126,7 +1137,7 @@
       <!-- FORM -->
       <form id="contactForm">
         <input id="planField" name="plan" type="text" placeholder="Select Plan" readonly required>
-        <p id="planError" class="form-error">Please choose a plan</p>
+        <p id="planError" class="form-error">Please choose a plan.</p>
         <input name="from_name" type="text" placeholder="Name" required>
         <input name="from_email" type="email" placeholder="Email" required>
         <textarea name="message" placeholder="Project Details" rows="5" required></textarea>
@@ -1220,8 +1231,10 @@
 
     /* PLAN SELECTOR */
     function selectPlan(plan){
-      document.getElementById("planField").value = plan;
-      document.getElementById("planError").style.display = "none";
+      const planField = document.getElementById("planField");
+      planField.value = plan;
+      document.getElementById("planError").classList.remove("show");
+      planField.classList.remove("input-error");
       const buttons = document.querySelectorAll(".plan-selector button");
       buttons.forEach(btn=>{
         btn.classList.remove("active");
@@ -1236,7 +1249,6 @@
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function(e){
       e.preventDefault();
-  
       const planField = document.getElementById("planField");
       const error = document.getElementById("planError");
       const validPlans = ["ELITE", "INFINITY", "LEGENDARY"];
@@ -1245,9 +1257,11 @@
       // VALIDATION
       if(!validPlans.includes(selectedPlan)){
         error.classList.add("show");
+        planField.classList.add("input-error");
         return;
       }
       error.classList.remove("show");
+      planField.classList.remove("input-error");
 
       // SEND EMAIL
       emailjs.sendForm(
