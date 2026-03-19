@@ -638,29 +638,29 @@
       color:#585858;
       margin-top:30px;
     }
+    /* PLAN FIELD ANIMATION */
+    #planField{
+      transition: transform 0.3s ease, border 0.3s ease;
+    }
+    /* MOVE INPUT UP */
+    #planField.error-active{
+      transform: translateY(-10px);
+      border:1px solid #FF4D4D !important;
+    }
     /* ERROR TEXT */
     .form-error{
       font-family:'Geist', sans-serif;
       font-size:12px;
       color:#FF4D4D;
-      margin-top:6px;
-      text-align:left;
+      margin-top:4px;
       opacity:0;
-      transform:translateY(-4px);
+      transform:translateY(10px);
       transition:all 0.3s ease;
     }
     /* SHOW ERROR */
     .form-error.show{
       opacity:1;
       transform:translateY(0);
-    }
-    /* INPUT BASE TRANSITION */
-    #planField{
-      transition:all 0.3s ease;
-    }
-    /* RED BORDER FOR PLAN */
-    .input-error{
-      border:1px solid #FF4D4D !important;
     }
     /* POPUP */
     .popup-overlay{
@@ -1233,7 +1233,7 @@
       const planField = document.getElementById("planField");
       planField.value = plan;
       document.getElementById("planError").classList.remove("show");
-      planField.classList.remove("input-error");
+      planField.classList.remove("error-active");
       const buttons = document.querySelectorAll(".plan-selector button");
       buttons.forEach(btn=>{
         btn.classList.remove("active");
@@ -1250,17 +1250,18 @@
       e.preventDefault();
       const planField = document.getElementById("planField");
       const error = document.getElementById("planError");
+
       const validPlans = ["ELITE", "INFINITY", "LEGENDARY"];
       const selectedPlan = planField.value;
       
       // VALIDATION
       if(!validPlans.includes(selectedPlan)){
         error.classList.add("show");
-        planField.classList.add("input-error");
+        planField.classList.add("error-active");
         return;
       }
       error.classList.remove("show");
-      planField.classList.remove("input-error");
+      planField.classList.remove("error-active");
 
       // SEND EMAIL
       emailjs.sendForm(
