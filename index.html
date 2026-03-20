@@ -652,15 +652,12 @@
       font-family:'Geist', sans-serif;
       font-size:12px;
       color:#FF4D4D;
+      display:none; /* 🔥 important */
       margin-top:4px;
-      opacity:0;
-      transform:translateY(10px);
-      transition:all 0.3s ease;
     }
     /* SHOW ERROR */
     .form-error.show{
-      opacity:1;
-      transform:translateY(0);
+      display:block;
     }
     /* POPUP */
     .popup-overlay{
