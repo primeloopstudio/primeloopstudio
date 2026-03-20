@@ -1208,8 +1208,8 @@
         hamburger.classList.remove('active');
         menuPanel.classList.remove('active');
         document.body.classList.remove("menu-open");
-  });
-});
+      });
+    });
 
     /* PLAN SELECTOR */
     function selectPlan(plan){
@@ -1222,7 +1222,7 @@
       buttons.forEach(btn=>{
         btn.classList.remove("active");
       });
-      const clicked = Array.from(buttons).find(btn => btn.innerText === plan);
+    const clicked = Array.from(buttons).find(btn => btn.innerText === plan);
       if(clicked){
         clicked.classList.add("active");
       }
@@ -1233,18 +1233,14 @@
     form.addEventListener("submit", function(e){
       e.preventDefault();
       const planField = document.getElementById("planField");
-      const error = document.getElementById("planError");
-
       const validPlans = ["ELITE", "INFINITY", "LEGENDARY"];
-      const selectedPlan = planField.value;
       
       // VALIDATION
-      const planField = document.getElementById("planField");
-      const validPlans = ["ELITE", "INFINITY", "LEGENDARY"];
       if(!validPlans.includes(planField.value)){
         planField.classList.add("error");
         return;
       }
+      // REMOVE ERROR
       planField.classList.remove("error");
       
       // SEND EMAIL
@@ -1255,10 +1251,9 @@
       ).then(function(){
         document.getElementById("successPopup").style.display = "flex";
         form.reset();
-      },
-             function(error){
-               alert("Something went wrong.");
-             });
+      }, function(error){
+        alert("Something went wrong.");
+      });
     });
     
     /* CLOSE POPUP */
