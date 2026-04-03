@@ -83,17 +83,22 @@
 
     /* HEADER */
     .terms-header{
+      max-width:720px;
+      margin:0 auto 60px;
       text-align:center;
-      margin-bottom:40px;
     }
     .terms-header h1{
       font-family:'Phudu',sans-serif;
       font-weight:900;
-      font-size:32px;
+      font-size:36px;
+      color:#232939;
+      margin-bottom:15px;
     }
     .terms-header p{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      font-size:16px;
       color:#585858;
-      font-size:14px;
     }
 
     /* DIVIDER */
@@ -134,6 +139,16 @@
       margin-bottom:8px;
       font-size:14px;
       color:#585858;
+    }
+    .revision-list{
+      display:flex;
+      flex-direction:column;
+      margin-top:6px;
+      gap:2px;
+    }
+    .revision-list span{
+      font-size:14px;
+      color:#232939;
     }
 
     /* SECTION TITLE */
@@ -244,7 +259,14 @@
       <ul>
         <li><strong>Payment:</strong> 50% upfront, 50% after approval.</li>
         <li><strong>Business Days:</strong> Monday–Friday.</li>
-        <li><strong>Revisions:</strong> Elite (2), Infinity (3), Legendary (Unlimited).</li>
+        <li>
+          <strong>Revisions:</strong>
+          <div class="revision-list">
+            <span>Elite: 2 Rounds</span>
+            <span>Infinity: 3 Rounds</span>
+            <span>Legendary: Unlimited Rounds</span>
+          </div>
+        </li>
         <li><strong>Storage:</strong> Files stored for 14 days.</li>
         <li><strong>Communication:</strong> 6:30 PM – 9:30 PM IST.</li>
       </ul>
