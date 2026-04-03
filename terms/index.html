@@ -1,40 +1,261 @@
-/* BANNER */
-.terms-banner{
-  margin-top:60px;
-  background:#4F80FF;
-  color:#FFFFFF;
-  text-align:center;
-  font-family:'Phudu',sans-serif;
-  font-weight:900;
-  padding:18px 10px;
-  font-size:18px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions | PrimeLoop Studio</title>
 
-/* CONTAINER */
-.terms-container{
-  max-width:800px;
-  margin:60px auto;
-  padding:0 20px;
-}
+  <!-- ICON -->
+  <link rel="icon" href="/primeloopstudio/logo.png">
+  <link rel="apple-touch-icon" href="/primeloopstudio/logo.png">
 
-/* HEADER */
-.terms-header{
-  text-align:center;
-  margin-bottom:40px;
-}
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;500;600&display=swap" rel="stylesheet">
 
-.terms-header h1{
-  font-family:'Phudu',sans-serif;
-  font-weight:900;
-  font-size:32px;
-  color:#232939;
-}
+  <style>
+    /* RESET */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Geist',sans-serif;}
+    body{background:#FFFFFF;color:#232939;}
+    a{text-decoration:none;color:inherit;}
 
-.terms-header p{
-  color:#585858;
-  font-size:14px;
-}
+    /* NAVBAR */
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 30px;
+      background:#FFFFFF;
+      z-index:3000;
+    }
+    nav .logo{
+      border:1px solid #519EFF;
+      border-radius:6px;
+    }
+    nav .logo img{
+      height:40px;
+      display:block;
+    }
 
+    .home-nav-btn{
+      padding:8px 16px;
+      border-radius:8px;
+      border:1px solid #4F80FF;
+      background:#FFFFFF;
+      color:#4F80FF;
+      font-size:13px;
+      transition:0.3s ease;
+    }
+    .home-nav-btn:hover{
+      background:#4F80FF;
+      color:#FFFFFF;
+    }
+
+    /* BANNER */
+    .terms-banner{
+      margin-top:60px;
+      background:#4F80FF;
+      color:#FFFFFF;
+      text-align:center;
+      font-family:'Phudu',sans-serif;
+      font-weight:900;
+      padding:18px 10px;
+      font-size:18px;
+    }
+
+    /* CONTAINER */
+    .terms-container{
+      max-width:800px;
+      margin:60px auto;
+      padding:0 20px;
+    }
+
+    /* HEADER */
+    .terms-header{
+      text-align:center;
+      margin-bottom:40px;
+    }
+    .terms-header h1{
+      font-family:'Phudu',sans-serif;
+      font-weight:900;
+      font-size:32px;
+    }
+    .terms-header p{
+      color:#585858;
+      font-size:14px;
+    }
+
+    /* DIVIDER */
+    .divider{
+      height:1px;
+      background:#BBBCC0;
+      margin:40px 0;
+    }
+
+    /* INTRO */
+    .terms-intro h2{
+      font-family:'Phudu',sans-serif;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+    .terms-intro p{
+      color:#585858;
+      font-size:14px;
+    }
+
+    /* BOX */
+    .terms-box{
+      border:1px solid #BBBCC0;
+      border-radius:14px;
+      padding:20px;
+      margin-top:25px;
+    }
+    .terms-box h3{
+      font-family:'Phudu',sans-serif;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+    .terms-box ul{
+      padding-left:18px;
+    }
+    .terms-box li{
+      margin-bottom:8px;
+      font-size:14px;
+      color:#585858;
+    }
+
+    /* SECTION TITLE */
+    .section-title{
+      margin-top:50px;
+      font-family:'Phudu',sans-serif;
+      font-weight:600;
+    }
+
+    /* SIGN */
+    .terms-sign{
+      margin-top:40px;
+    }
+    .terms-sign p{
+      font-weight:500;
+    }
+    .terms-sign span{
+      font-size:13px;
+      color:#585858;
+    }
+
+    /* CTA */
+    .terms-cta-wrap{
+      text-align:center;
+      margin-top:50px;
+    }
+    .terms-cta-btn{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:8px;
+      border:1px solid #4F80FF;
+      background:#FFFFFF;
+      color:#4F80FF;
+      font-size:13px;
+      transition:0.3s ease;
+    }
+    .terms-cta-btn:hover{
+      background:#4F80FF;
+      color:#FFFFFF;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="/primeloopstudio/" class="logo">
+      <img src="/primeloopstudio/logo.png">
+    </a>
+    <a href="/primeloopstudio/" class="home-nav-btn">HOME</a>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="terms-banner">
+    PRIMELOOP STUDIO
+  </div>
+
+  <section class="terms-container">
+
+    <!-- HEADER -->
+    <div class="terms-header">
+      <h1>TERMS & CONDITIONS</h1>
+      <p>Scaling your vision through the "Overnight Magic" workflow.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- INTRO -->
+    <div class="terms-intro">
+      <h2>Welcome to the Loop</h2>
+      <p>
+        We don’t just edit videos; we build brands. This guide outlines how we work together to ensure your content is delivered with cinematic quality, every single time.
+      </p>
+    </div>
+
+    <!-- CORE -->
+    <div class="terms-box">
+      <h3>Our Core Principles:</h3>
+      <ul>
+        <li>The Follow-The-Sun Model: We utilize the time zone difference to work while you sleep.</li>
+        <li>Quality Over Everything: Every frame is polished for maximum retention.</li>
+        <li>Transparent Collaboration: No hidden fees, no guesswork.</li>
+      </ul>
+    </div>
+
+    <!-- WORKFLOW -->
+    <h2 class="section-title">THE WORKFLOW</h2>
+
+    <div class="terms-box">
+      <h3>From Raw Footage to Viral Content</h3>
+      <ul>
+        <li><strong>1. The Hand-off</strong> — Upload files to shared drive.</li>
+        <li><strong>2. The Production Cycle</strong> — Overnight Magic begins.</li>
+        <li><strong>3. The First Look</strong> — Draft delivered for review.</li>
+        <li><strong>4. The Final Polish</strong> — Final delivery after approval.</li>
+      </ul>
+    </div>
+
+    <!-- RULES -->
+    <h2 class="section-title">THE RULES OF THE GAME</h2>
+
+    <div class="terms-box">
+      <h3>Policies & Terms</h3>
+      <ul>
+        <li><strong>Payment:</strong> 50% upfront, 50% after approval.</li>
+        <li><strong>Business Days:</strong> Monday–Friday.</li>
+        <li><strong>Revisions:</strong> Elite (2), Infinity (3), Legendary (Unlimited).</li>
+        <li><strong>Storage:</strong> Files stored for 14 days.</li>
+        <li><strong>Communication:</strong> 6:30 PM – 9:30 PM IST.</li>
+      </ul>
+    </div>
+
+    <!-- SIGN -->
+    <div class="terms-sign">
+      <p>Abhigyan Raj</p>
+      <span>Founder, PrimeLoop Studio</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="terms-cta-wrap">
+      <a href="/primeloopstudio/" class="terms-cta-btn">BACK TO HOME</a>
+    </div>
+
+  </section>
+
+</body>
+</html>
 /* DIVIDER */
 .divider{
   height:1px;
