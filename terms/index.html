@@ -140,15 +140,17 @@
       font-size:14px;
       color:#585858;
     }
-    .revision-list{
+    .revisions-item{
       display:flex;
-      flex-direction:column;
-      margin-top:6px;
-      gap:2px;
+      align-items:flex-start;
+      gap:6px;
     }
-    .revision-list span{
-      font-size:14px;
-      color:#232939;
+    .rev-label{
+      font-weight:600;
+      white-space:nowrap;
+    }
+    .rev-content{
+      display:block;
     }
 
     /* SECTION TITLE */
@@ -259,13 +261,13 @@
       <ul>
         <li><strong>Payment:</strong> 50% upfront, 50% after approval.</li>
         <li><strong>Business Days:</strong> Monday–Friday.</li>
-        <li>
-          <strong>Revisions:</strong>
-          <div class="revision-list">
-            <span>Elite: 2 Rounds</span>
-            <span>Infinity: 3 Rounds</span>
-            <span>Legendary: Unlimited Rounds</span>
-          </div>
+        <li class="revisions-item">
+          <span class="rev-label">Revisions:</span>
+          <span class="rev-content">
+            Elite - 2 Rounds<br>
+            Infinity - 3 Rounds<br>
+            Legendary - Unlimited Rounds
+          </span>
         </li>
         <li><strong>Storage:</strong> Files stored for 14 days.</li>
         <li><strong>Communication:</strong> 6:30 PM – 9:30 PM IST.</li>
