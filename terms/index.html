@@ -209,23 +209,21 @@
       font-weight:300;
       color:#232939;
     }
-    .revisions-block{
-      display:inline;
+    .revisions-row{
+      display:flex;
+      align-items:flex-start;
+      gap:6px;
     }
-    .core-desc br{
-      line-height:1.6;
+    .rev-label{
+      font-family:'Geist',sans-serif;
+      font-weight:500;
+      color:#232939;
+      white-space:nowrap;
     }
-    .rev-wrap{
-      display:inline-block;
-      vertical-align:top;
-      margin-left:4px;
-    }
-    .rev-line{
-      display:block;
-      margin-left:72px;
-    }
-    .rev-line:first-child{
-      margin-left:0;
+    .rev-lines{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:#585858;
     }
     .rev-plan{
       font-weight:300;
@@ -391,19 +389,13 @@
           <span class="core-title">Weekend Delivery:</span>
           <span class="core-desc">Standard production runs Monday-Friday. Guaranteed weekend delivery is available with a 25% Priority Surcharge that will be applied to your project total.</span>
         </li>
-        <li>
-          <span class="core-title">Revisions:</span>
-          <span class="core-desc rev-wrap">
-            <span class="rev-line">
-              <span class="rev-plan">Elite -</span>2 Rounds.
-            </span>
-            <span class="rev-line">
-              <span class="rev-plan">Infinity -</span>3 Rounds.
-            </span>
-            <span class="rev-line">
-              <span class="rev-plan">Legendary -</span>Unlimited Rounds.
-            </span>
-          </span>
+        <li class="revisions-row">
+          <span class="rev-label">Revisions:</span>
+          <div class="rev-lines">
+            <div><span class="rev-plan">Elite -</span> 2 Rounds.</div>
+            <div><span class="rev-plan">Infinity -</span> 3 Rounds.</div>
+            <div><span class="rev-plan">Legendary -</span> Unlimited Rounds.</div>
+          </div>
         </li>
         <li>
           <span class="core-title">Revision Window:</span>
