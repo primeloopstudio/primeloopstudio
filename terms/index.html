@@ -162,12 +162,29 @@
       display:flex;
       align-items:flex-start;
       gap:6px;
+      position:relative;
+      padding-left:14px;
+    }
+    .revisions-item::before{
+      content:"";
+      width:5px;
+      height:5px;
+      background:#585858;
+      border-radius:50%;
+      position:absolute;
+      left:0;
+      top:7px;
     }
     .rev-label{
-      font-weight:600;
+      font-family:'Geist',sans-serif;
+      font-weight:500;
+      color:#232939;
       white-space:nowrap;
     }
     .rev-content{
+      font-family:'Geist',sans-serif;
+      font-weight:300;
+      color:#585858;
       display:block;
     }
     /* WORKFLOW */
